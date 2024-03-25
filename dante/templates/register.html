@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="login">
+    <div class="container">
+        <div class="card border-0 text-center  d-flex flex-column justify-content-center align-items-center">
+            <div class="card-body">
+                <form method="POST" action="{% url 'register' %}">
+                    {% csrf_token %}
+                    
+                    {{form.as_p}}
+                    <br>
+                    <button type="submit" class="btn btn-secondary">Register</button>
+                </form>
+                </div>
+            </div>
+            <img src="../media/faq2.jpeg" class="card-img-bottom rounded-start" alt="">
+        </div>
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section id="product">
+            <div class="container top-0">
+                <div class="wrapper-products row row-cols-lg-3 row-cols-md-2 row-cols-1">
+                    {% for product in products %}
+                    <div class="card border border-0 col centralamerica text-center">
+                        <a href="{% url 'product' product.id %}">
+                        <img src="{{ product.image.url }}" alt="" class="card-img-top">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{product.name}}</h5>
+                            <p class="card-text">{{product.description}}</p>
+                            <p class="card-text">Region: {{product.category}}</p>
+                            <p class="card-text">{{product.price}}$</p>
+                            <a href="{% url 'product' product.id %}"><button class="btn btn-secondary">Go To Details</button></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+    </section>
+</main>
+{% endblock %}

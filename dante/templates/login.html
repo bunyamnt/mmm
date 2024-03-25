@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="login">
+    <div class="container">
+        <div class="card border-0 text-center  d-flex flex-column justify-content-center align-items-center">
+            <div class="card-body">
+                <h1 class="card-title">Login</h1>
+                <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group mb-3">
+                        <label class="label" for="userLog">Username</label>
+                        <input type="text" class="form-control required" placeholder="Username" name="username">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="label" for="userPass">Password</label>
+                        <input type="password" class="form-control required" placeholder="Password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="form-control btn btn-secondary submit px-3">Sign In</button>
+                    </div>
+                </form>
+                <div class="recover">
+                    <p class="small py-0 my-0">Forgot your password? <a href="#" class="text-decoration-none">Click here to recover your password.</a></p>
+                    <p class="small py-0 my-0">Don't have an account? <a href="{% url 'register' %}" class="text-decoration-none">Click here to sign up.</a></p>
+                </div>
+            </div>
+            <img src="../media/faq2.jpeg" class="card-img-bottom rounded-start w-100" alt="">
+        </div>
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="cart mt-5">
+    <div class="container">
+        <div class="card shop-card border-0">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="title">
+                        <div class="row">
+                            <div class="col"><h4><b>Shopping Cart</b></h4></div>
+                        </div>
+                    </div>  
+                    <div class="wrapper-cart"> 
+                        {% for product in cart_products %}
+                        <div class="row main align-items-center">
+                            <div class="col-2"><img class="img-fluid" src="{{product.image.url}}"></div>
+                            <div class="col">
+                                <div class="row">{{product.name}}</div>
+                            </div>
+                            <div class="col">
+                                    {% for key, value in quantities.items %}
+                                        {% if key == product.id|slugify %}
+                                        <p class="mt-3">
+                                            {{value}}
+                                        </p>
+                                        {% endif %}
+                                    {% endfor %}
+                            </div>
+                            <div class="col-2 d-flex justify-content-between mt-3"><p>{{product.price}}</p><span class="close">&#10005;</span></div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-4 summary text-center">
+                    <form>
+                        <p>SHIPPING</p>
+                        <select>
+                            <option class="text-muted">Standard-Delivery Free</option>
+                            <option class="text-muted" disabled>Fast-Delivery Not Available</option>
+                        </select>
+                    </form>
+                    <div class="row border-top border-secondary">
+                        <div class="col">TOTAL PRICE</div>
+                        <div class="col text-right" id="totalPrice"></div>
+                    </div>
+                    <button class="btn btn-secondary">CHECKOUT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

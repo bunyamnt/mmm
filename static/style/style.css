@@ -1,0 +1,65 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bg-home{
+  background-color: rgba(206, 206, 190, 0.747) !important;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  min-height: 100vh;
+}
+.navbar{
+  background-color: red !important;
+}
+.nav-link:hover{
+  color: white !important;
+  background-color: green;
+  border-color: rgb(96, 12, 12) !important;
+}
+.footer{
+  background-color: rgb(168, 160, 134);
+}
+.footer-link:hover{
+  color:brown !important
+}
+.card{
+  transition: 0.3s all;
+  background-color: inherit !important;
+}
+.card:hover{
+  background-color: brown !important; 
+  color: white;
+}
+.btn:hover{
+  background-color: brown !important;
+  border-color: rgb(96, 12, 12) !important;
+}
+.accordion-item { 
+  background-color: rgba(206, 206, 190, 0.747) !important; 
+} 
+.accordion-button { 
+  background-color: rgba(206, 206, 190, 0.747) !important; 
+} 
+.dropdown-menu{
+  background-color: rgb(206, 206, 190) !important;
+}
+.accordion-button:focus{
+  box-shadow: none !important;
+}
+.scroll-top{
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  display: none;
+  transition: 0.5s all;
+}
+.main{
+  width: 100%;
+}
+.shop-card:hover{
+  background-color: rgba(206, 206, 190, 0.747) !important;
+  color: black;
+}
+.footer{
+  margin-top: auto;
+}
